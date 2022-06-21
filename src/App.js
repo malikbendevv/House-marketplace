@@ -20,9 +20,7 @@ function App() {
       <Toaster />
       <Router>
         <Routes>
-//           <Route path="/" element={<PrivateRoute />}>
-            <Route path="/" element={<Explore />} />
-//           </Route>{" "}
+          <Route path="/" element={<Explore />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
