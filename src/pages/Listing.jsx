@@ -9,16 +9,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/a11y";
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { db } from "../config";
 import Spinner from "../components/Spinner";
 import shareIcon from "../assets/svg/shareIcon.svg";
+import ReactStars from "react-rating-stars-component";
 
 const Listing = () => {
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
   const [shareLinkCopied, setShareLinkCopied] = useState(false);
+  const [value, setValue] = useState(null);
+  const [newValue, setNewValue] = useState(null);
 
   const navigate = useNavigate();
   const params = useParams();
@@ -33,10 +36,39 @@ const Listing = () => {
         console.log(docSnap.data());
         setListing(docSnap.data());
         setLoading(false);
+        setValue(docSnap.data()?.rating);
       }
     };
     fetchListing();
   }, [params.listingId]);
+
+  // change rating
+  const submitRating = async () => {
+    const docRef = doc(db, "listing", params.listingId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      // console.log(docSnap.data());
+      let rating = [value];
+      const rating2 = rating.push(newValue);
+      console.log(rating);
+      // calculate rating
+      function CalculateRating() {
+        let sum = 0;
+
+        for (let i = 0; i < rating.length; i++) {
+          sum += rating[i];
+          var stars = sum / rating.length;
+        }
+        return stars;
+      }
+      CalculateRating();
+      console.log("func", CalculateRating());
+      const stars = CalculateRating();
+      // const formDataCopy = { ...docSnap.data(), rating };
+      await updateDoc(docRef, { rating: stars });
+    }
+  };
 
   if (loading) {
     return <Spinner />;
@@ -93,6 +125,20 @@ const Listing = () => {
         <p className="listingType">
           for {listing.type === "rent" ? "Rent" : "Sale"}{" "}
         </p>
+        {/* Rating */}
+        <ReactStars
+          count={5}
+          onChange={(newRating) => {
+            setNewValue(newRating);
+            console.log(newValue);
+          }}
+          size={28}
+          value={value}
+          activeColor="#ffd700"
+        />
+        <button onClick={submitRating} className="RatingBtn">
+          Submit Rating
+        </button>
         {listing.offer && (
           <p className="discountedPrice">
             ${listing.regulaPrice - listing.discountedPrice}

@@ -14,21 +14,24 @@ import Contact from "./pages/Contact";
 import EditListing from "./pages/EditListing";
 import NavBar from "./components/NavBar";
 import { Toaster } from "react-hot-toast";
+import UploadImg from "./components/UploadImg";
+
 function App() {
   return (
     <>
       <Toaster />
       <Router>
         <Routes>
-          <Route path="/" element={<PrivateRoute />}>
-            <Route path="/" element={<Explore />} />
-          </Route>{" "}
+          {/* <Route path="/" element={<PrivateRoute />}> */}
+          <Route path="/" element={<Explore />} />
+          {/* </Route>{" "} */}
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/category/:categoryName/" element={<Category />} />
           <Route path="/create-listing/" element={<CreateListing />} />
+          <Route path="/upload-image/" element={<UploadImg />} />
           <Route path="/edit-listing/:listingId" element={<EditListing />} />
           <Route path="/Contact/:landlordId" element={<Contact />} />
           <Route path="/profile" element={<PrivateRoute />}>
