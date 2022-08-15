@@ -22,11 +22,9 @@ function App() {
       <Toaster />
       <Router>
         <Routes>
+          {/* <Route path="/" element={<PrivateRoute />}> */}
           <Route path='/' element={<Explore />} />
-<<<<<<< HEAD
-          <Route path='/' element={<Explore />} />
-=======
->>>>>>> rating
+          {/* </Route>{" "} */}
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
