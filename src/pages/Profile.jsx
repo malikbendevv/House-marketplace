@@ -59,12 +59,17 @@ const Profile = () => {
     };
     // Getting stripe accountid from firestore
     const retrieveAccountId = async () => {
+      console.log('retrieve id2 ');
+
       const docSnap = doc(db, 'users', auth?.currentUser?.uid);
       const document = await getDoc(docSnap);
+      console.log('retrieve id');
       setAccountId(document.data()?.accountId);
     };
     // retrieve account from stripe
     const retrieveAccountStatus = async () => {
+      console.log('retrieve status');
+
       console.log(accountId);
       try {
         const res = await axios.post(
@@ -77,9 +82,10 @@ const Profile = () => {
         console.log(err);
       }
     };
+
     fetchUserListings();
-    retrieveAccountId();
     retrieveAccountStatus();
+    retrieveAccountId();
   }, [auth.currentUser.uid, accountId]);
   // logout
   const onLogout = () => {

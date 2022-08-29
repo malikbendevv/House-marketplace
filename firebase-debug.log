@@ -5694,3 +5694,132 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] >      at processTimers (node:internal/timers:502:7) {"user":"    at processTimers (node:internal/timers:502:7)\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at processTimers (node:internal/timers:502:7)\r"}}
 [debug] [2022-08-24T21:36:25.676Z] [worker-us-central1-api-2f371983-3934-42d0-964b-3c26277b365f]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-2f371983-3934-42d0-964b-3c26277b365f]: exited"}}
 [debug] [2022-08-24T21:36:25.676Z] [worker-us-central1-api-2f371983-3934-42d0-964b-3c26277b365f]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-api-2f371983-3934-42d0-964b-3c26277b365f]: FINISHED"}}
+[debug] [2022-08-29T16:42:21.473Z] ----------------------------------------------------------------------
+[debug] [2022-08-29T16:42:21.476Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lnovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-08-29T16:42:21.477Z] CLI Version:   11.6.0
+[debug] [2022-08-29T16:42:21.477Z] Platform:      win32
+[debug] [2022-08-29T16:42:21.477Z] Node Version:  v16.15.1
+[debug] [2022-08-29T16:42:22.106Z] Time:          Mon Aug 29 2022 17:42:21 GMT+0100 (UTC+01:00)
+[debug] [2022-08-29T16:42:22.107Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-29T16:42:22.148Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-08-29T16:42:22.421Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-29T16:42:22.422Z] > authorizing via signed-in user (malikbendevv@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project housemarketplace-9456a. This may result in unexpected behavior. 
+[debug] [2022-08-29T16:42:22.563Z] [hub] writing locator at C:\Users\lnovo\AppData\Local\Temp\hub-housemarketplace-9456a.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-08-29T16:42:22.894Z] defaultcredentials: writing to file C:\Users\lnovo\AppData\Roaming\firebase\malikbendevv_gmail_com_application_default_credentials.json
+[debug] [2022-08-29T16:42:22.939Z] Setting GAC to C:\Users\lnovo\AppData\Roaming\firebase\malikbendevv_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\lnovo\\AppData\\Roaming\\firebase\\malikbendevv_gmail_com_application_default_credentials.json"}}
+[debug] [2022-08-29T16:42:22.942Z] > refreshing access token with scopes: []
+[debug] [2022-08-29T16:42:22.946Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-29T16:42:22.946Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-29T16:42:23.125Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-08-29T16:42:23.126Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-08-29T16:42:23.450Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-08-29T16:42:23.450Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-29T16:42:23.620Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/housemarketplace-9456a/adminSdkConfig [none]
+[debug] [2022-08-29T16:42:23.994Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/housemarketplace-9456a/adminSdkConfig 403
+[debug] [2022-08-29T16:42:23.995Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/housemarketplace-9456a/adminSdkConfig {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-08-29T16:42:23.995Z] Failed to get Admin SDK config for housemarketplace-9456a, falling back to cacheFailed to get Admin SDK for Firebase project housemarketplace-9456a. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project housemarketplace-9456a. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}},"response":{"statusCode":403}},"exit":1,"message":"HTTP Error: 403, The caller does not have permission","status":403},"status":500}
+[debug] [2022-08-29T16:42:24.139Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-29T16:42:24.140Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-08-29T16:42:24.140Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\lnovo\\.cache\\firebase\\emulators\\ui-v1.9.0\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\lnovo\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.9.0\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-08-29T16:42:24.748Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "C:\Users\lnovo\Desktop\My Projects\react-firebase-housemarketplace\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\lnovo\\Desktop\\My Projects\\react-firebase-housemarketplace\\functions\" for Cloud Functions..."}}
+[debug] [2022-08-29T16:42:24.981Z] Validating nodejs source
+[debug] [2022-08-29T16:42:59.809Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-29T16:42:59.809Z] Building nodejs source
+[debug] [2022-08-29T16:42:59.809Z] Analyzing nodejs backend spec
+[debug] [2022-08-29T16:42:59.812Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-29T16:43:13.987Z] Serving at port 9005
+
+[debug] [2022-08-29T16:43:35.361Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-08-29T16:45:45.104Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:45:45.105Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:45:45.111Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:45:45.115Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:45:45.116Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:45:45.117Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:45:45.564Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:45:45.565Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:45:45.567Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:48:30.966Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:48:30.966Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:48:30.967Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:50:52.451Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:50:52.452Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:50:52.454Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:50:52.457Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:50:52.457Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:50:52.458Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:50:53.091Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:50:53.091Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:50:53.093Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:54:41.269Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:54:41.270Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:54:41.272Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:56:27.055Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:56:27.056Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:56:27.059Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:56:27.062Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:56:27.062Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:56:27.064Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T16:56:28.008Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T16:56:28.008Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T16:56:28.009Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T17:08:03.023Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T17:08:03.024Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T17:08:03.024Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-29T17:08:40.643Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-08-29T17:08:40.644Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-08-29T17:08:40.645Z] [work-queue] {"queueLength":0,"workRunningCount":0}
