@@ -73,11 +73,12 @@ const Profile = () => {
       console.log(accountId);
       try {
         const res = await axios.post(
-          'http://localhost:5001/housemarketplace-9456a/us-central1/api/balance',
+          'https://us-central1-housemarketplace-9456a.cloudfunctions.net/api/balance',
           { accountId }
         );
         const status = await res.data.Verified;
         setIsVerified(status);
+        console.log(status);
       } catch (err) {
         console.log(err);
       }

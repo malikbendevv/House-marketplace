@@ -35,7 +35,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        'http://localhost:5001/housemarketplace-9456a/us-central1/api/Create-stripe-account',
+        'https://us-central1-housemarketplace-9456a.cloudfunctions.net/api/Create-stripe-account',
         {
           email,
         },
