@@ -16,7 +16,7 @@ import Spinner from '../components/Spinner';
 import shareIcon from '../assets/svg/shareIcon.svg';
 import ReactStars from 'react-rating-stars-component';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Modal, Typography, Box } from '@mui/material';
+import { Modal, Typography, Box, useMediaQuery } from '@mui/material';
 
 import axios from 'axios';
 const Listing = () => {
@@ -47,6 +47,7 @@ const Listing = () => {
   const navigate = useNavigate();
   const params = useParams();
   const auth = getAuth();
+  const matches = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -125,6 +126,9 @@ const Listing = () => {
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
+    if (!email || !name || !price) {
+      return;
+    }
     setProcessing(true);
 
     const res = await axios.post(
@@ -153,7 +157,11 @@ const Listing = () => {
       setProcessing(false);
       setSucceeded(true);
       // setClientSecret("");
-      await setDoc(doc(db, 'buyers', userId), { sellerEmail, price });
+      await setDoc(doc(db, 'buyers', userId), {
+        sellerEmail,
+        price,
+        buyerEmail: email,
+      });
     }
   };
   if (loading) {
@@ -164,7 +172,18 @@ const Listing = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 600,
+    width: 450,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+  const smallScreenStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 350,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -245,7 +264,7 @@ const Listing = () => {
           aria-labelledby='modal-modal-title'
           aria-describedby='modal-modal-description'
         >
-          <Box sx={style}>
+          <Box sx={matches ? smallScreenStyle : style}>
             <div className='inputsDiv'>
               <input
                 className='ModalInput'
@@ -286,7 +305,7 @@ const Listing = () => {
         </Modal>
         {listing.offer && (
           <p className='discountedPrice'>
-            ${listing.regulaPrice - listing.discountedPrice}
+            ${listing.regularPrice - listing.discountedPrice}
             discount
           </p>
         )}
