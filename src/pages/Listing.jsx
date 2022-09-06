@@ -255,7 +255,7 @@ const Listing = () => {
         <button onClick={submitRating} className='RatingBtn'>
           Submit Rating
         </button>
-        <button onClick={handleOpen} className='RatingBtn'>
+        <button onClick={handleOpen} className='RatingBtn payBtn'>
           {listing.type === 'rent' ? 'rent now' : 'Buy now'}{' '}
         </button>
         <Modal
