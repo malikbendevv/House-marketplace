@@ -238,6 +238,7 @@ html{
 .signUpText {
   cursor: pointer;
 }
+
 @media (min-width: 1024px) {
   .signInBar,
   .signUpBar {
@@ -895,4 +896,7 @@ width:40%
     top:-15%;
     width:20px;
   }
+}
+.Number{
+  width:50px;
 }
