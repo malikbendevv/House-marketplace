@@ -33,6 +33,7 @@ const Listing = () => {
   const [accountId, setAccountId] = useState(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [number, setNumber] = useState(1);
   const [open, setOpen] = useState(false);
   const [sellerEmail, setSellerEmail] = useState('');
   const [result, setResult] = useState(0);
@@ -130,10 +131,10 @@ const Listing = () => {
       return;
     }
     setProcessing(true);
-
+setPrice(price *number)
     const res = await axios.post(
       'http://localhost:5001/housemarketplace-9456a/us-central1/api/pay',
-      { price, accountId }
+      { price  , accountId }
     );
     const clientSecret = res.data.clientSecret;
 
@@ -255,7 +256,7 @@ const Listing = () => {
         <button onClick={submitRating} className='RatingBtn'>
           Submit Rating
         </button>
-        <button onClick={handleOpen} className='RatingBtn'>
+        <button onClick={handleOpen} className='RatingBtn payBtn'>
           {listing.type === 'rent' ? 'rent now' : 'Buy now'}{' '}
         </button>
         <Modal
@@ -282,6 +283,17 @@ const Listing = () => {
                 }}
                 placeholder='Email'
               />
+              {listing.type === 'rent' && <input
+                className='ModalInput Number'
+                type='number'
+                value={number}
+                min='1'
+                onChange={(e) => {
+                  setNumber(e.target.value);
+                }}
+                placeholder='Number of months'
+              /> }
+               
             </div>
 
             <div className='CardElement'>
@@ -293,7 +305,7 @@ const Listing = () => {
                 className='payBtn'
                 onClick={pay}
               >
-                {processing ? 'processing' : succeeded ? 'succeeded' : 'pay'}
+                {processing ? 'processing' : succeeded ? 'succeeded' :  `Pay ${price * number}`}
               </button>
             </div>
 

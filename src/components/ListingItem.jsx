@@ -41,13 +41,15 @@ const ListingItem = ({ listing, id, onEdit, onDelete }) => {
             <img src={bathtubIcon} alt="bath" />
             <p className="categoryListingInfoText">
               {listing.bathrooms > 1
-                ? `${listing.bathrooms} Bedrooms`
+                ? `${listing.bathrooms} Bathrooms`
                 : "1 Bathroom"}
             </p>
           </div>
         </div>
       </Link>
+      <div className='Icons'>
       {onDelete && (
+        
         <DeleteIcon
           className="removeIcon"
           fill="rgb(231,76,60)"
@@ -57,6 +59,7 @@ const ListingItem = ({ listing, id, onEdit, onDelete }) => {
         />
       )}
       {onEdit && <EditIcon className="editIcon" onClick={() => onEdit(id)} />}
+      </div>
     </li>
   );
 };
